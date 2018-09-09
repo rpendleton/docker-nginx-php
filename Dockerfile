@@ -12,7 +12,7 @@ RUN apk add --no-cache \
       uwsgi-python \
     && python -m ensurepip \
     && rm -r /usr/lib/python*/ensurepip \
-    && pip install --upgrade pip setuptools uwsgi \
+    && pip install --upgrade pip setuptools uwsgi supervisor-stdout \
     && rm /etc/nginx/conf.d/default.conf \
     && rm -r /root/.cache \
     && mkdir -p /usr/share/nginx/html \
