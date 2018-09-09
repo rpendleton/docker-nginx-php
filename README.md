@@ -15,7 +15,7 @@ you're looking for a small image, you'll likely want to make modifications or
 look elsewhere.
 
 Additionally, since this image is mainly used for personal projects and changes
-often, so I'd advise against using it directly as the base for your own image.
+often, I'd advise against using it directly as the base for your own image.
 Instead, I'd recommend forking it or simply using parts of it to create your own
 images that fulfill your needs.
 
