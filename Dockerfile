@@ -5,14 +5,14 @@ RUN apk add --no-cache \
       build-base \
       linux-headers \
       nginx \
-      python2 \
-      python2-dev \
+      python3 \
+      python3-dev \
       supervisor \
       uwsgi \
-      uwsgi-python \
-    && python -m ensurepip \
+      uwsgi-python3 \
+    && python3 -m ensurepip \
     && rm -r /usr/lib/python*/ensurepip \
-    && pip install --upgrade pip setuptools uwsgi supervisor-stdout \
+    && pip3 install --upgrade pip setuptools uwsgi supervisor-stdout \
     && rm /etc/nginx/conf.d/default.conf \
     && rm -r /root/.cache \
     && mkdir -p /usr/share/nginx/html \

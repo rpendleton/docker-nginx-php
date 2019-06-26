@@ -6,7 +6,7 @@ for running a Python uWSGI service. It is comprised of:
 * Supervisord
 * nginx
 * uWSGI
-* Python 2
+* Python 3
 
 Although this image is based on Alpine Linux, I made the decision to include
 build dependencies which result in a larger image. I prefer this since it
@@ -55,7 +55,7 @@ FROM rpendleton/nginx-uwsgi
 ADD requirements.txt /requirements.txt
 
 RUN apk add --no-cache --virtual .build-deps mariadb-dev \
- && pip install --no-cache-dir -r /requirements.txt \
+ && pip3 install --no-cache-dir -r /requirements.txt \
  && apk add --no-cache --virtual .runtime-deps mariadb-client-libs \
  && apk del .build-deps
 
@@ -69,7 +69,7 @@ COPY --chown=nginx:nginx conf/myapp-uwsgi.ini /etc/uwsgi/conf.d/
 COPY --chown=nginx:nginx . /app
 
 ENV DJANGO_SETTINGS_MODULE=myapp.settings
-RUN python manage.py collectstatic --noinput
+RUN python3 manage.py collectstatic --noinput
 ```
 
 **env.conf:**
