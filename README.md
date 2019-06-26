@@ -51,7 +51,7 @@ This example shows how to create an image for a simple Django app.
 **Dockerfile:**
 
 ```Dockerfile
-FROM rpendleton/nginx-uwsgi
+FROM rpendleton/nginx-uwsgi:python3
 ADD requirements.txt /requirements.txt
 
 RUN apk add --no-cache --virtual .build-deps mariadb-dev \
